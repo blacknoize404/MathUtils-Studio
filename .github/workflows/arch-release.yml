@@ -1,0 +1,45 @@
+name: Paquete de Arch de una release
+
+# Construye el paquete de Arch Linux de una release ya publicada y lo añade a ella, con el PKGBUILD actualizado en main.
+# Sirve cuando el trabajo "arch" de package.yml falló o no existía al publicar la release. Se ejecuta a mano con la etiqueta.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Etiqueta de la release (por ejemplo v0.8.1)
+        required: true
+
+jobs:
+  arch:
+    runs-on: ubuntu-latest
+    container: archlinux:base-devel
+    permissions:
+      contents: write
+    env:
+      TAG: ${{ inputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Instalar git, pacman-contrib (trae updpkgsums) y la CLI de GitHub
+        run: pacman -Syu --noconfirm --needed git pacman-contrib github-cli
+
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Construir el paquete
+        run: |
+          version="${TAG#v}"
+          sed -i "s|^pkgver=.*|pkgver=${version}|; s|^pkgrel=.*|pkgrel=1|" packaging/arch/PKGBUILD
+          useradd -m builder
+          chown -R builder:builder .
+          su builder -c "cd packaging/arch && updpkgsums && makepkg -fd --noconfirm && makepkg --printsrcinfo > .SRCINFO"
+
+      - name: Subir el paquete a la release y actualizar el PKGBUILD
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          gh release upload "$TAG" packaging/arch/*.pkg.tar.zst --clobber
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packaging/arch/PKGBUILD packaging/arch/.SRCINFO
+          git diff --cached --quiet || { git commit -m "Update the Arch package to ${TAG}" && git pull --rebase origin main && git push origin HEAD:main; }

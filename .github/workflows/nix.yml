@@ -1,0 +1,25 @@
+name: Nix
+
+# Comprueba que el paquete de Nix compila cuando cambia (o a mano). El paquete usa la release publicada que dice nix/package.nix.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - flake.nix
+      - nix/**
+      - .github/workflows/nix.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - name: Compilar el paquete
+        run: nix build .#default --print-build-logs
+      - name: Ver que el runtime de Java arranca con las bibliotecas de Nix
+        run: |
+          runtime=result/opt/mathutils-studio/lib/runtime/bin/java
+          "$runtime" -version
+          "$runtime" --list-modules | grep -i mathutils

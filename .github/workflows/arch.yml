@@ -1,0 +1,32 @@
+name: Arch Linux
+
+# Comprueba que el PKGBUILD construye el paquete cuando cambia (o a mano). Usa la release publicada que dice packaging/arch/PKGBUILD.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - packaging/arch/**
+      - .github/workflows/arch.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: archlinux:base-devel
+    steps:
+      - name: Instalar git
+        run: pacman -Syu --noconfirm --needed git
+
+      - uses: actions/checkout@v4
+
+      - name: Construir el paquete con makepkg
+        run: |
+          useradd -m builder
+          chown -R builder:builder .
+          su builder -c "cd packaging/arch && makepkg -fd --noconfirm"
+
+      - name: Ver lo que instala
+        run: |
+          pkg=$(ls packaging/arch/*.pkg.tar.zst)
+          pacman -Qlp "$pkg" | grep -E "usr/bin/|applications/|icons/|opt/mathutils-studio/bin/"
+          pacman -Qip "$pkg" | grep -E "Name|Version|Depends On|License"

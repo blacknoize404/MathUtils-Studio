@@ -1,0 +1,56 @@
+﻿MathUtils Studio - End-user license agreement / Acuerdo de licencia de usuario final
+
+Copyright (c) 2026 barnesinside (blacknoize404). All rights reserved. / Todos los derechos reservados.
+
+=== English ===
+
+1. Grant. You may install and use MathUtils Studio ("the Software") free of charge, for personal, educational and
+   internal business use, on any number of your own computers.
+
+2. Restrictions. Except where the law or a third-party license below says otherwise, you may not: (a) copy or
+   redistribute the Software, or offer it for download elsewhere (link to the official releases page instead);
+   (b) modify it, decompile it, disassemble it or reverse engineer it; (c) remove its notices or branding; (d) sell,
+   rent or sublicense it, or include it in a product or service you offer to others.
+
+3. Ownership. The Software is licensed, not sold. The author keeps all rights in it, including its names and logos.
+
+4. Third-party components. The Software includes components under their own licenses, which apply to them and not to
+   this agreement: OpenJFX and the Java runtime (GPL-2.0 with the Classpath Exception), the BI.MathUtils and
+   BI.Windows.Shell libraries (Apache-2.0), the Geist and Geist Mono typefaces (SIL Open Font License 1.1) and the
+   Lucide icons (ISC). Their texts are in the installed application.
+
+5. No warranty. The Software is provided "as is", without warranty of any kind. Results may contain errors: check them
+   before relying on them. The author is not liable for any damage arising from its use.
+
+6. Other uses. For redistribution, bundling, institutional deployment or support, contact the author through
+   https://barnesinside.is-a.dev to agree a separate license.
+
+7. Earlier versions. Versions published before this agreement under the GNU GPL v3 stay under that license for the
+   people who received them.
+
+=== Español ===
+
+1. Concesión. Puedes instalar y usar MathUtils Studio ("el Software") sin coste, para uso personal, educativo y
+   empresarial interno, en todos los equipos propios que quieras.
+
+2. Restricciones. Salvo lo que permita la ley o una licencia de terceros de las de abajo, no puedes: (a) copiar ni
+   redistribuir el Software, ni ofrecerlo para descargar en otro sitio (enlaza a la página oficial de releases);
+   (b) modificarlo, descompilarlo, desensamblarlo ni aplicarle ingeniería inversa; (c) quitar sus avisos o su marca;
+   (d) venderlo, alquilarlo o sublicenciarlo, ni incluirlo en un producto o servicio que ofrezcas a otros.
+
+3. Propiedad. El Software se licencia, no se vende. El autor conserva todos los derechos sobre él, incluidos sus
+   nombres y logotipos.
+
+4. Componentes de terceros. El Software incluye componentes con su propia licencia, que se aplica a ellos y no a este
+   acuerdo: OpenJFX y el runtime de Java (GPL-2.0 con la Classpath Exception), las librerías BI.MathUtils y
+   BI.Windows.Shell (Apache-2.0), las tipografías Geist y Geist Mono (SIL Open Font License 1.1) y los iconos Lucide
+   (ISC). Sus textos están en la aplicación instalada.
+
+5. Sin garantía. El Software se ofrece "tal cual", sin garantía de ningún tipo. Los resultados pueden contener
+   errores: compruébalos antes de fiarte de ellos. El autor no responde de ningún daño derivado de su uso.
+
+6. Otros usos. Para redistribución, inclusión en otros productos, despliegue institucional o soporte, escribe al autor
+   en https://barnesinside.is-a.dev y se acuerda una licencia aparte.
+
+7. Versiones anteriores. Las versiones publicadas antes de este acuerdo bajo la GNU GPL v3 siguen bajo esa licencia
+   para quienes las recibieron.
