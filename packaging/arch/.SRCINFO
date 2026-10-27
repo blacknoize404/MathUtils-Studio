@@ -1,6 +1,6 @@
 pkgbase = mathutils-studio
 	pkgdesc = Calculadora y solucionadores matemáticos paso a paso (derivadas, límites, integrales, matrices, estadística...)
-	pkgver = 0.8.5
+	pkgver = 0.8.6
 	pkgrel = 1
 	url = https://github.com/blacknoize404/MathUtils-Studio
 	arch = x86_64
@@ -24,9 +24,9 @@ pkgbase = mathutils-studio
 	depends = zlib
 	options = !strip
 	options = !debug
-	source = mathutils-studio-0.8.5.tar.gz::https://github.com/blacknoize404/MathUtils-Studio/releases/download/v0.8.5/MathUtilsStudio-0.8.5-linux-x86_64.tar.gz
+	source = mathutils-studio-0.8.6.tar.gz::https://github.com/blacknoize404/MathUtils-Studio/releases/download/v0.8.6/MathUtilsStudio-0.8.6-linux-x86_64.tar.gz
 	source = LICENSE
-	sha256sums = 228518fdc86b152bae556dd4b4753494110b743e17536a50527e77ce3b1c8f89
+	sha256sums = 82c603f19eb79b5a5c93452e5fc977f3e43de620bc04623033a5d9c2aeaf2a9c
 	sha256sums = 78259db52a9843be88ac6312fe91fc805b2fb6eacdca71779472953ace2a36e5
 
 pkgname = mathutils-studio
