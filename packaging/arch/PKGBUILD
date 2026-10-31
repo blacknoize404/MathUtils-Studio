@@ -4,7 +4,7 @@
 # runtime de Java, recortado con jlink). pkgver y la suma las actualiza el flujo de GitHub Actions al publicar una
 # release; también sirve para el AUR.
 pkgname=mathutils-studio
-pkgver=0.9.0
+pkgver=0.10.0
 pkgrel=1
 pkgdesc='Calculadora y solucionadores matemáticos paso a paso (derivadas, límites, integrales, matrices, estadística...)'
 arch=('x86_64')
@@ -16,7 +16,7 @@ depends=('gtk3' 'alsa-lib' 'libxtst' 'libxxf86vm' 'libxrender' 'libxi' 'libxext'
 options=('!strip' '!debug')
 source=("$pkgname-$pkgver.tar.gz::$url/releases/download/v$pkgver/MathUtilsStudio-$pkgver-linux-x86_64.tar.gz"
         "LICENSE")
-sha256sums=('f306d7c4fa28cf4f73c1c7011a0c25e0ab2fe51b667d8a5fb5f7d6d859382fd8'
+sha256sums=('d64a5c80546743062f1b3d4bbbdfca66dfe1832e47a846346b126bd6c04cbbde'
             '78259db52a9843be88ac6312fe91fc805b2fb6eacdca71779472953ace2a36e5')
 
 package() {
