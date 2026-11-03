@@ -29,7 +29,7 @@
 
 let
   version = "0.11.1";
-  hash = "sha256-2rxEWswplafWufUgL09j+GzcXYp8/c6OHh9CXQ3XfCY=";
+  hash = "sha256-MD8acZoQW4O7MY7wHgE/GGXCbs6QUKKI1kpnpFFYCro=";
 in
 stdenv.mkDerivation {
   pname = "mathutils-studio";
